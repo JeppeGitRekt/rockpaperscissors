@@ -10,7 +10,7 @@ function getHumanChoice() {
     return humanChoice;
 }
 
-
+//function to play a round of rock, paper, scissors. conditional loops to decide loss or victory every round.
 function playRound(humanChoice, computerChoice) {
 
     if (humanChoice == 'rock' && computerChoice == 'Scissors') {
@@ -41,15 +41,17 @@ function playRound(humanChoice, computerChoice) {
         console.log("It's a tie! You both chose " + humanChoice + '.');
     }
 
+    //Logs player's scores
     console.log('Your score: ' + humanScore);
     console.log('Computers score: ' + computerScore);
     }
 
-
+//assignes functions to variables to use as parameters and force lowercase output.
 const humanChoice = getHumanChoice().toLowerCase();
 const computerChoice = getComputerChoice();
 
 
+//function to play a round until a player reaches 3 points. Alerts player at loss or win. Increments score every round.
 function playGame() {
     function playRound(humanChoice, computerChoice) {
 
@@ -80,7 +82,8 @@ function playGame() {
         else {
             console.log("It's a tie! You both chose " + humanChoice + '.');
         }
-    
+        
+        //logs score every round
         console.log('Your score: ' + humanScore);
         console.log('Computers score: ' + computerScore);
         }
@@ -89,6 +92,7 @@ function playGame() {
         let humanScore = 0;
         let computerScore = 0;
 
+        //Loop to play a round until a player reaches 3 points. alerts player when game over.
         while (humanScore < 3 && computerScore < 3) {
             let humanChoice = prompt("Rock, paper, or scissors? First to 3 points win.").toLowerCase();
             let computerChoice = getComputerChoice();
@@ -102,5 +106,6 @@ function playGame() {
         }
 }
 
+//Executes function that initiates the whole game.
 playGame(humanChoice, computerChoice);
 
