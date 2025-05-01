@@ -6,14 +6,10 @@ function getComputerChoice() {
 
 // creates prompt and returns user input
 function getHumanChoice() {
-    let humanChoice = prompt("Rock, paper or scissors?");
-    console.log(humanChoice);
+    let humanChoice = ("Rock, paper or scissors?");
     return humanChoice;
 }
 
-// variables to store score between human and computer
-let humanScore = 0;
-let computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
 
@@ -53,10 +49,58 @@ function playRound(humanChoice, computerChoice) {
 const humanChoice = getHumanChoice().toLowerCase();
 const computerChoice = getComputerChoice();
 
-playRound(humanChoice, computerChoice);
 
 function playGame() {
+    function playRound(humanChoice, computerChoice) {
+
+        if (humanChoice == 'rock' && computerChoice == 'Scissors') {
+            humanScore++;
+            console.log("You win! The computer chose scissors!");
+        }
+        else if (humanChoice == 'paper' && computerChoice == 'Rock') {
+            humanScore++;
+            console.log("You win! The computer chose rock!");
+        }
+        else if (humanChoice == 'scissors' && computerChoice == 'Paper') {
+            humanScore++;
+            console.log("You win! The computer chose paper!");
+        }
+        else if (humanChoice == 'rock' && computerChoice == 'Paper') {
+            computerScore++;
+            console.log("You lose. Computer chose paper!");
+        }
+        else if (humanChoice == 'paper' && computerChoice == 'Scissors') {
+            computerScore++;
+            console.log("You lose. Computer chose scissors!");
+        }
+        else if (humanChoice == 'scissors' && computerChoice == 'Rock') {
+            computerScore++;
+            console.log("You lose. Computer chose rock!");
+        }
+        else {
+            console.log("It's a tie! You both chose " + humanChoice + '.');
+        }
     
+        console.log('Your score: ' + humanScore);
+        console.log('Computers score: ' + computerScore);
+        }
+
+        // variables to store score between human and computer
+        let humanScore = 0;
+        let computerScore = 0;
+
+        while (humanScore < 5 && computerScore < 5) {
+            let humanChoice = prompt("Rock, paper, or scissors?").toLowerCase();
+            let computerChoice = getComputerChoice();
+            let = playRound(humanChoice, computerChoice);
+        }
+        if (humanScore === 5) {
+            alert('You win over the computer! Refresh page to play again.')
+        }
+        else if (computerScore === 5) {
+            alert('The computer wins. Refresh page to try again.')
+        }
 }
 
+playGame(humanChoice, computerChoice);
 
