@@ -6,7 +6,7 @@ function getComputerChoice() {
 
 // creates prompt and returns user input
 function getHumanChoice() {
-    let humanChoice = ("Rock, paper or scissors?");
+    let humanChoice = ("Rock, paper or scissors? First to 3 points win.");
     return humanChoice;
 }
 
@@ -89,15 +89,15 @@ function playGame() {
         let humanScore = 0;
         let computerScore = 0;
 
-        while (humanScore < 5 && computerScore < 5) {
-            let humanChoice = prompt("Rock, paper, or scissors?").toLowerCase();
+        while (humanScore < 3 && computerScore < 3) {
+            let humanChoice = prompt("Rock, paper, or scissors? First to 3 points win.").toLowerCase();
             let computerChoice = getComputerChoice();
             let = playRound(humanChoice, computerChoice);
         }
-        if (humanScore === 5) {
+        if (humanScore === 3) {
             alert('You win over the computer! Refresh page to play again.')
         }
-        else if (computerScore === 5) {
+        else if (computerScore === 3) {
             alert('The computer wins. Refresh page to try again.')
         }
 }
